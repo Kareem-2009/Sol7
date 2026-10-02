@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: linear-gradient(135deg, #fff5f7, #ffe4ec, #ffffff);
+    color: #4a2632;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* الصفحة الرئيسية */
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 18px;
+}
+
+.card {
+    width: min(900px, 100%);
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    padding: 42px 28px;
+    box-shadow: 0 20px 60px rgba(130, 45, 75, 0.15);
+    backdrop-filter: blur(12px);
+    text-align: center;
+}
+
+/* القلب */
+.heart {
+    font-size: 58px;
+    animation: pulse 1.6s infinite;
+    margin-bottom: 12px;
+}
+
+/* العنوان */
+h1 {
+    font-size: clamp(42px, 9vw, 76px);
+    margin-bottom: 12px;
+    color: #a62f57;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #79515f;
+    margin-bottom: 28px;
+}
+
+/* الرسالة */
+.message {
+    max-width: 680px;
+    margin: auto;
+    line-height: 2;
+    font-size: 20px;
+    color: #593642;
+}
+
+/* أماكن الصور */
+.photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 35px 0;
+}
+
+.photo {
+    height: 210px;
+    border: 2px dashed #e8a5b9;
+    border-radius: 20px;
+    background: rgba(255, 240, 245, 0.55);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #c58298;
+    font-size: 15px;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* السؤال */
+.question {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 22px 0;
+}
+
+/* الأزرار */
+.buttons {
+    position: relative;
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+}
+
+button {
+    border: none;
+    padding: 15px 28px;
+    border-radius: 999px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+/* زر آه */
+.yes {
+    background: #c83e6b;
+    color: white;
+
+    box-shadow: 0 8px 22px rgba(200, 62, 107, 0.3);
+}
+
+.yes:hover {
+    transform: scale(1.06);
+}
+
+/* زر لسه زعلانة */
+.no {
+    background: #f1dce3;
+    color: #6b3d4d;
+    position: relative;
+}
+
+/* النهاية */
+.final {
+    display: none;
+
+    min-height: 100vh;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+.final.show {
+    display: flex;
+}
+
+.final-card {
+    max-width: 700px;
+    padding: 45px 25px;
+}
+
+.final h2 {
+    font-size: clamp(38px, 8vw, 65px);
+    color: #a62f57;
+    margin-bottom: 18px;
+}
+
+.final p {
+    font-size: 22px;
+    line-height: 2;
+}
+
+/* حركة القلب */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+/* الموبايل */
+@media (max-width: 650px) {
+
+    .card {
+        padding: 32px 18px;
+    }
+
+    .photos {
+        grid-template-columns: 1fr;
+    }
+
+    .photo {
+        height: 180px;
+    }
+
+    .message {
+        font-size: 17px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    button {
+        padding: 13px 20px;
+        font-size: 15px;
+    }
+}
